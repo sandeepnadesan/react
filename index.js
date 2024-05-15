@@ -1,9 +1,10 @@
 const express = require("express")
-const todoRouter = require('./router/todo')
+const todoRouter = require('./router/todo.js')
 const app = express()
-
+const cors = require('cors')
+app.use(cors());
 const mongoose = require("mongoose")
-
+const port = 3000;
 app.use(express.json())
 
 const url ="mongodb://localhost:27017/workshop"
@@ -17,6 +18,6 @@ app.use('/',todoRouter);
 
 
 
-app.listen(3000,()=>{
-    console.log("server started");
+app.listen(port,()=>{
+    console.log(`server started ${port}`);
 });

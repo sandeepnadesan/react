@@ -1,19 +1,19 @@
-const express =  require("express")
-
+const express = require("express");
 const router = express.Router();
 
-const{
+const {
     getAllTodos,
-    getAllTodosById,
+    getTodosById,
     addTodo,
     updateTodo,
     deleteTodo
-}=require('../controller/todo');
+} = require('../controller/todo');
 
-router.get('/',getAllTodos);
-router.get('/:id',getAllTodosById);
-router.get('/',addTodo);
-router.get('/:id',updateTodo);
-router.get('/:id',deleteTodo);
+// Define routes with different paths and HTTP methods
+router.get('/', getAllTodos);
+router.get('/:id', getTodosById);
+router.post('/', addTodo); // Use POST for adding a new todo
+router.put('/:id', updateTodo); // Use PUT for updating a todo
+router.delete('/:id', deleteTodo); // Use DELETE for deleting a todo
 
-module.exports = router
+module.exports = router;

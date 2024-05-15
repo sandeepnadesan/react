@@ -5,9 +5,8 @@ const TodoModel = new mongoose.Schema({
         type:String
     },
     iscompleted:{
-        
-        type:Boolean
-
+        type:Boolean,
+        default:false
     }
 });
 
